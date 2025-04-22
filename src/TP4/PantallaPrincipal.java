@@ -15,26 +15,38 @@ public class PantallaPrincipal extends JPanel {
     public PantallaPrincipal() {
     	setLayout(new GridBagLayout());
 
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(10, 10, 10, 10);
-
+    	// Título
         titulo = new JLabel("GRUPO NRO:  8", SwingConstants.LEFT);
         titulo.setFont(new Font("Arial", Font.BOLD, 20));
-        gbc.gridx = 0;
-        gbc.gridy = 0;
-        add(titulo, gbc);
+        GridBagConstraints gbcTitulo = new GridBagConstraints();
+        gbcTitulo.insets = new Insets(10, 10, 10, 10);
+        gbcTitulo.gridx = 0;
+        gbcTitulo.gridy = 0;
+        add(titulo, gbcTitulo);
 
+        // Botón Ejercicio 1
         btnEj1 = new JButton("Ejercicio 1");
-        gbc.gridy = 1;
-        add(btnEj1, gbc);
+        GridBagConstraints gbcBtn1 = new GridBagConstraints();
+        gbcBtn1.insets = new Insets(10, 10, 10, 10);
+        gbcBtn1.gridx = 0;
+        gbcBtn1.gridy = 1;
+        add(btnEj1, gbcBtn1);
 
+        // Botón Ejercicio 2
         btnEj2 = new JButton("Ejercicio 2");
-        gbc.gridy = 2;
-        add(btnEj2, gbc);
+        GridBagConstraints gbcBtn2 = new GridBagConstraints();
+        gbcBtn2.insets = new Insets(10, 10, 10, 10);
+        gbcBtn2.gridx = 0;
+        gbcBtn2.gridy = 2;
+        add(btnEj2, gbcBtn2);
 
+        // Botón Ejercicio 3
         btnEj3 = new JButton("Ejercicio 3");
-        gbc.gridy = 3;
-        add(btnEj3, gbc);
+        GridBagConstraints gbcBtn3 = new GridBagConstraints();
+        gbcBtn3.insets = new Insets(10, 10, 10, 10);
+        gbcBtn3.gridx = 0;
+        gbcBtn3.gridy = 3;
+        add(btnEj3, gbcBtn3);
 
         // Eventos
         btnEj1.addActionListener(new EventoEj1());

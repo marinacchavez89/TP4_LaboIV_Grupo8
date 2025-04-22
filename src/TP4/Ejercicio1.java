@@ -13,44 +13,44 @@ public class Ejercicio1 extends JFrame {
 	private String mensaje;
 	public Ejercicio1() {
         setTitle("Contactos");
-        setSize(564, 430);
+        setSize(508, 411);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         getContentPane().setLayout(null);
         
         JLabel lblNombre = new JLabel("Nombre");
-        lblNombre.setBounds(57, 39, 46, 14);
+        lblNombre.setBounds(91, 59, 46, 14);
         getContentPane().add(lblNombre);
         
         txtNombre = new JTextField();
-        txtNombre.setBounds(139, 36, 197, 20);
+        txtNombre.setBounds(218, 53, 197, 20);
         getContentPane().add(txtNombre);
         txtNombre.setColumns(10);
         
         JLabel lblApellido = new JLabel("Apellido");
-        lblApellido.setBounds(57, 82, 46, 14);
+        lblApellido.setBounds(91, 104, 46, 14);
         getContentPane().add(lblApellido);
         
         txtApellido = new JTextField();
-        txtApellido.setBounds(139, 79, 197, 20);
+        txtApellido.setBounds(218, 98, 197, 20);
         getContentPane().add(txtApellido);
         txtApellido.setColumns(10);
         
         JLabel lblTelefono = new JLabel("Telefono");
-        lblTelefono.setBounds(57, 129, 75, 14);
+        lblTelefono.setBounds(91, 144, 75, 14);
         getContentPane().add(lblTelefono);
         
         txtTelefono = new JTextField();
-        txtTelefono.setBounds(139, 126, 197, 20);
+        txtTelefono.setBounds(218, 138, 197, 20);
         getContentPane().add(txtTelefono);
         txtTelefono.setColumns(10);
         
         JLabel lblFecha = new JLabel("Fecha Nac.");
-        lblFecha.setBounds(57, 184, 75, 14);
+        lblFecha.setBounds(91, 184, 75, 14);
         getContentPane().add(lblFecha);
         
         txtFecha = new JTextField();
-        txtFecha.setBounds(139, 181, 197, 20);
+        txtFecha.setBounds(218, 178, 197, 20);
         getContentPane().add(txtFecha);
         txtFecha.setColumns(10);
         
@@ -105,9 +105,8 @@ public class Ejercicio1 extends JFrame {
         		 
         		 txtNombre.setText("");
         		 txtApellido.setText("");
-        		 txtTelefono.setText("");
-        		 txtNombre.setText("");
-        		 txtFecha.setText("");
+        		 txtTelefono.setText("");        		 
+        		 txtFecha.setText("");        		 
         		 
         		 txtNombre.setBackground(Color.WHITE);
      		     txtApellido.setBackground(Color.WHITE);
@@ -116,13 +115,12 @@ public class Ejercicio1 extends JFrame {
         	 } else {
         			//se muestra este texto si hay campos vacios
         			lblMostrar.setText("No hay campos para mostrar");
-        			lblMostrarCampos.setText("");
-        		       		
+        			lblMostrarCampos.setText("");        		       		
         	 }
 			}
 		});
         
-        btnMostrar.setBounds(234, 233, 89, 23);
+        btnMostrar.setBounds(326, 233, 89, 23);
         getContentPane().add(btnMostrar);
         
     }

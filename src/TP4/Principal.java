@@ -15,7 +15,7 @@ public class Principal extends JFrame {
 	                try {
 	                    Principal frame = new Principal();
 	                    frame.setTitle("TP 4 - Menú Principal");
-	                    frame.setSize(400, 300);
+	                    frame.setSize(600, 500);
 	                    frame.setLocationRelativeTo(null);
 	                    frame.setVisible(true);
 	                } catch (Exception e) {
