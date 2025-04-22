@@ -54,7 +54,8 @@ public class Ejercicio1 extends JFrame {
         getContentPane().add(txtFecha);
         txtFecha.setColumns(10);
         
-        JLabel lblMostrar = new JLabel("Los datos ingresados fueron:");
+        //JLabel lblMostrar = new JLabel("Los datos ingresados fueron:");
+        JLabel lblMostrar = new JLabel("");
         lblMostrar.setBounds(10, 325, 172, 14);
         getContentPane().add(lblMostrar);
                
@@ -96,6 +97,8 @@ public class Ejercicio1 extends JFrame {
         	 }
         	 
         	 if(completo) {
+        		//ahora se setea solo si esta todo completo
+        		lblMostrar.setText("Los datos ingresados fueron:"); 
         		 
         		 mensaje = " " + txtNombre.getText() + " " + txtApellido.getText() + " " +txtTelefono.getText() + " " + txtFecha.getText();
         		 lblMostrarCampos.setText(mensaje);
@@ -110,10 +113,14 @@ public class Ejercicio1 extends JFrame {
      		     txtApellido.setBackground(Color.WHITE);
      			 txtTelefono.setBackground(Color.WHITE);
      			 txtFecha.setBackground(Color.WHITE);
-        	 }
+        	 } else {
+        			//se muestra este texto si hay campos vacios
+        			lblMostrar.setText("No hay campos para mostrar");
+        			lblMostrarCampos.setText("");
         		       		
-        	}
-        });
+        	 }
+			}
+		});
         
         btnMostrar.setBounds(234, 233, 89, 23);
         getContentPane().add(btnMostrar);
