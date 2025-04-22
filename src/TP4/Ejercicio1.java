@@ -101,7 +101,10 @@ public class Ejercicio1 extends JFrame {
         		lblMostrar.setText("Los datos ingresados fueron:"); 
         		 
         		 mensaje = " " + txtNombre.getText() + " " + txtApellido.getText() + " " +txtTelefono.getText() + " " + txtFecha.getText();
+        		 
         		 lblMostrarCampos.setText(mensaje);
+        		 
+        		 JOptionPane.showMessageDialog(null, "Datos mostrados correctamente.");
         		 
         		 txtNombre.setText("");
         		 txtApellido.setText("");
