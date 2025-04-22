@@ -97,6 +97,28 @@ public class Ejercicio1 extends JFrame {
         	 }
         	 
         	 if(completo) {
+        		 
+        	     /* //validar que se ingresen letras en nombre 
+                 if (!txtNombre.getText().matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+")) {
+        	          txtNombre.setBackground(Color.RED);
+        		      JOptionPane.showMessageDialog(null, "El nombre solo debe contener letras.");
+        		      return;
+        		    }
+
+                 //validar que se ingresen letras en apellido
+        	     if (!txtApellido.getText().matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+")) {
+        		      txtApellido.setBackground(Color.RED);
+        		      JOptionPane.showMessageDialog(null, "El apellido solo debe contener letras.");
+        		      return;
+        		    }
+
+        		 // Validar que se ingresen numeros en telefono 
+        		 if (!txtTelefono.getText().matches("\\d+")) {
+        		      txtTelefono.setBackground(Color.RED);
+        		      JOptionPane.showMessageDialog(null, "El teléfono solo debe contener números.");
+        		      return;
+        		   }    */
+        		 
         		//ahora se setea solo si esta todo completo
         		lblMostrar.setText("Los datos ingresados fueron:"); 
         		 
