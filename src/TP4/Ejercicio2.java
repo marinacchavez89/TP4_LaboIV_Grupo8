@@ -16,7 +16,7 @@ public class Ejercicio2 extends JFrame {
 	public Ejercicio2() {
         setTitle("Promedio");
         setSize(400, 353);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(new GridBagLayout());
 
@@ -120,6 +120,15 @@ public class Ejercicio2 extends JFrame {
                     double n1 = Double.parseDouble(nota1.getText());
                     double n2 = Double.parseDouble(nota2.getText());
                     double n3 = Double.parseDouble(nota3.getText());
+                    
+                    //Validacion notas
+                    
+                    if (n1 < 1|| n1 > 10 || n2 < 1|| n2 > 10 || n3 < 1 || n3 > 10) {
+                        JOptionPane.showMessageDialog(null,
+                        		"Las notas deben estar entre 1 y 10.");
+                        return;
+                    }
+                    
                     String tp = comboTP.getSelectedItem().toString();
                     String condicion;
                     double promedio = (n1 + n2 + n3) / 3;
@@ -141,10 +150,34 @@ public class Ejercicio2 extends JFrame {
                 }
             }
         });
-		
-	}
 		//accion boton nuevo
+		btnNuevo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				nota1.setText("");
+				nota2.setText("");
+				nota3.setText("");
+				txtPromedio.setText("");
+                txtCondicion.setText("");
+                comboTP.setSelectedIndex(0);
+                nota1.requestFocus();
+			}
+		});
 		//accion boton salir 
+		btnSalir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int confirm = JOptionPane.showConfirmDialog(
+				   null, "Estás seguro que deseas salir?", 
+				   			"Confirmar salida", 
+				            JOptionPane.YES_NO_OPTION
+				        );
+				        if (confirm == JOptionPane.YES_OPTION) {
+				            System.exit(0);
+				        }
+			}
+	
+		});
+	}
+		
 	
 		public static void main(String[] args) {
 	        SwingUtilities.invokeLater(() -> new Ejercicio2().setVisible(true));
