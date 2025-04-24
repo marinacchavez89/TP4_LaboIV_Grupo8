@@ -135,6 +135,16 @@ public class Ejercicio3 extends JFrame {
                 String soSeleccionado = getSOSeleccionado();
                 String especialidadesSeleccionadas = getEspecialidadesSeleccionadas();
                 String horasComputadora = textField.getText();
+                
+                if(horasComputadora.isEmpty()) {
+                	JOptionPane.showMessageDialog(
+                			Ejercicio3.this,
+                			"Por favor, ingrese la cantidad de horas.",
+                			"Campo vacío",
+                			JOptionPane.WARNING_MESSAGE
+                			);
+                	return;
+                }
 
                 // Mostrar los datos en una nueva ventana
                 mostrarMensajeFormateado(soSeleccionado, especialidadesSeleccionadas, horasComputadora);
