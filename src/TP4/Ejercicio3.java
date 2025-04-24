@@ -15,7 +15,7 @@ import java.awt.Color;
 public class Ejercicio3 extends JFrame {
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	public Ejercicio3() {
-        setTitle("Ejercicio 3");
+        setTitle("Seleccion multiple");
         setSize(454, 298);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -23,7 +23,7 @@ public class Ejercicio3 extends JFrame {
         
         JPanel panel = new JPanel();
         panel.setForeground(new Color(0, 0, 0));
-        panel.setBounds(10, 28, 418, 40);
+        panel.setBounds(10, 28, 418, 35);
         panel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         getContentPane().add(panel);
         FlowLayout fl_panel = new FlowLayout(FlowLayout.CENTER, 5, 5);
