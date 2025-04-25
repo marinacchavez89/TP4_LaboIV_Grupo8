@@ -187,6 +187,7 @@ public class Ejercicio3 extends JFrame {
 
                 // Mostrar los datos en una nueva ventana
                 mostrarMensajeFormateado(soSeleccionado, especialidadesSeleccionadas, horasComputadora);
+                limpiarFormulario();
             }
 
             // Obtenemos el SO seleccionado
@@ -228,6 +229,14 @@ public class Ejercicio3 extends JFrame {
                         "Mensaje",
                         JOptionPane.INFORMATION_MESSAGE
                 );
+            }
+            private void limpiarFormulario()
+            {
+            	buttonGroup.clearSelection();
+            	cbProgramacion.setSelected(false);
+            	cbDisenio.setSelected(false);
+            	cbAdministracion.setSelected(false);
+            	textField.setText("");
             }
         });
     }
