@@ -135,10 +135,13 @@ public class Ejercicio2 extends JFrame {
 
                     if (tp.equals("Desaprobado") || n1 < 6 || n2 < 6 || n3 < 6) {
                         condicion = "Libre";
+                        txtCondicion.setBackground(Color.red);
                     } else if (n1 >= 8 && n2 >= 8 && n3 >= 8) {
                         condicion = "Promocionado";
+                        txtCondicion.setBackground(Color.green);
                     } else {
                         condicion = "Regular";
+                        txtCondicion.setBackground(Color.green);
                     }
 
                     // Mostramos los resultados en los campos de texto
@@ -158,6 +161,7 @@ public class Ejercicio2 extends JFrame {
 				nota3.setText("");
 				txtPromedio.setText("");
                 txtCondicion.setText("");
+                txtCondicion.setBackground(Color.white);
                 comboTP.setSelectedIndex(0);
                 nota1.requestFocus();
 			}
