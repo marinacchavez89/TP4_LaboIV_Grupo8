@@ -177,10 +177,4 @@ public class Ejercicio2 extends JFrame {
 	
 		});
 	}
-		
-	
-		public static void main(String[] args) {
-	        SwingUtilities.invokeLater(() -> new Ejercicio2().setVisible(true));
-		}
-
 }
