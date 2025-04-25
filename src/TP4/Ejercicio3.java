@@ -229,6 +229,13 @@ public class Ejercicio3 extends JFrame {
                         "Mensaje",
                         JOptionPane.INFORMATION_MESSAGE
                 );
+                
+                //limpia los campos despues de mostrarlos en pantalla al oprimir "ACEPTAR"
+                buttonGroup.clearSelection();
+                cbProgramacion.setSelected(false);
+                cbAdministracion.setSelected(false);
+                cbDisenio.setSelected(false);
+                textField.setText("");
             }
             private void limpiarFormulario()
             {
