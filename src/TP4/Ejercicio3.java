@@ -145,6 +145,25 @@ public class Ejercicio3 extends JFrame {
                 			);
                 	return;
                 }
+                if(soSeleccionado.isEmpty()) {
+                    JOptionPane.showMessageDialog(
+                            Ejercicio3.this,
+                            "Por favor, seleccione un sistema operativo.",
+                            "Campo vacío",
+                            JOptionPane.WARNING_MESSAGE
+                    );
+                    return;
+                }
+                
+                if(especialidadesSeleccionadas.isEmpty()) {
+                    JOptionPane.showMessageDialog(
+                            Ejercicio3.this,
+                            "Por favor, seleccione al menos una especialidad.",
+                            "Campo vacío",
+                            JOptionPane.WARNING_MESSAGE
+                    );
+                    return;
+                }
 
                 // Mostrar los datos en una nueva ventana
                 mostrarMensajeFormateado(soSeleccionado, especialidadesSeleccionadas, horasComputadora);
