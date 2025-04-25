@@ -135,16 +135,26 @@ public class Ejercicio3 extends JFrame {
                 String soSeleccionado = getSOSeleccionado();
                 String especialidadesSeleccionadas = getEspecialidadesSeleccionadas();
                 String horasComputadora = textField.getText();
+                int horas;
                 
-                if(horasComputadora.isEmpty()) {
-                	JOptionPane.showMessageDialog(
-                			Ejercicio3.this,
-                			"Por favor, ingrese la cantidad de horas.",
-                			"Campo vacío",
-                			JOptionPane.WARNING_MESSAGE
-                			);
-                	return;
-                }
+                try {
+                	horas=Integer.parseInt(horasComputadora);
+                	if (horas<=0) {
+                		JOptionPane.showMessageDialog(
+                				null, "Ingrese un valor positivo para las horas", 
+                				"Error",
+                				JOptionPane.WARNING_MESSAGE);
+                		return;
+                				}
+                	} catch (NumberFormatException ex) {
+                		JOptionPane.showMessageDialog(
+                				null, "Ingrese un valor númerico para las horas", 
+                				"Error",
+                				JOptionPane.WARNING_MESSAGE);
+                		return;
+                	}
+                
+                
                 if(soSeleccionado.isEmpty()) {
                     JOptionPane.showMessageDialog(
                             Ejercicio3.this,
@@ -163,6 +173,16 @@ public class Ejercicio3 extends JFrame {
                             JOptionPane.WARNING_MESSAGE
                     );
                     return;
+                }
+                
+                if(horasComputadora.isEmpty()) {
+                	JOptionPane.showMessageDialog(
+                			Ejercicio3.this,
+                			"Por favor, ingrese la cantidad de horas.",
+                			"Campo vacío",
+                			JOptionPane.WARNING_MESSAGE
+                			);
+                	return;
                 }
 
                 // Mostrar los datos en una nueva ventana
