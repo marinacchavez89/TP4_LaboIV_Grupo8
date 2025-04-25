@@ -4,6 +4,9 @@ import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
+import java.util.Date;
 
 public class Ejercicio1 extends JFrame {
 	private JTextField txtNombre;
@@ -56,16 +59,19 @@ public class Ejercicio1 extends JFrame {
         
         //JLabel lblMostrar = new JLabel("Los datos ingresados fueron:");
         JLabel lblMostrar = new JLabel("");
-        lblMostrar.setBounds(10, 325, 172, 14);
+        lblMostrar.setBounds(10, 297, 172, 14);
         getContentPane().add(lblMostrar);
                
         JLabel lblMostrarCampos = new JLabel("");
-        lblMostrarCampos.setBounds(192, 325, 346, 14);
+        lblMostrarCampos.setBounds(205, 252, 277, 120);
         getContentPane().add(lblMostrarCampos);
         
         JButton btnMostrar = new JButton("Mostrar");
         btnMostrar.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
+        	 // Limpio las etiquetas antes de validar
+             lblMostrar.setText("");
+             lblMostrarCampos.setText("");
         	 boolean completo = true;
         	 
         	 if(txtNombre.getText().trim().isEmpty()) {
@@ -98,7 +104,7 @@ public class Ejercicio1 extends JFrame {
         	 
         	 if(completo) {
         		 
-        	     /* //validar que se ingresen letras en nombre 
+        	      //validar que se ingresen letras en nombre 
                  if (!txtNombre.getText().matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+")) {
         	          txtNombre.setBackground(Color.RED);
         		      JOptionPane.showMessageDialog(null, "El nombre solo debe contener letras.");
@@ -117,13 +123,37 @@ public class Ejercicio1 extends JFrame {
         		      txtTelefono.setBackground(Color.RED);
         		      JOptionPane.showMessageDialog(null, "El teléfono solo debe contener números.");
         		      return;
-        		   }    */
+        		   }    
+        		 
+        		 //validacion de fecha 
+        		 try {
+        			    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        			    sdf.setLenient(false); //Si la fecha no existe exactamente como fue ingresada, lanza un error
+        			    Date fecha = sdf.parse(txtFecha.getText());
+
+        			    if (fecha.after(new Date())) {
+        			        txtFecha.setBackground(Color.RED);
+        			        JOptionPane.showMessageDialog(null, "La fecha no puede ser en el futuro.");
+        			        return;
+        			    } else {
+        			        txtFecha.setBackground(Color.WHITE);
+        			    }
+
+        			} catch (ParseException ex) {
+        			    txtFecha.setBackground(Color.RED);
+        			    JOptionPane.showMessageDialog(null, "Formato de fecha inválido. Use dd/MM/yyyy.");
+        			    return;
+        			}
+        		 
         		 
         		//ahora se setea solo si esta todo completo
         		lblMostrar.setText("Los datos ingresados fueron:"); 
         		 
-        		 mensaje = " " + txtNombre.getText() + " " + txtApellido.getText() + " " +txtTelefono.getText() + " " + txtFecha.getText();
-        		 
+        		 //mensaje = " " + txtNombre.getText() + " " + txtApellido.getText() + " " +txtTelefono.getText() + " " + txtFecha.getText();
+        		mensaje = "<html>Nombre: " + txtNombre.getText() +
+        		          "<br>Apellido: " + txtApellido.getText() +
+        		          "<br>Teléfono: " + txtTelefono.getText() +
+        		          "<br>Fecha Nac.: " + txtFecha.getText() + "</html>";
         		 lblMostrarCampos.setText(mensaje);
         		 
         		 JOptionPane.showMessageDialog(null, "Datos mostrados correctamente.");
